@@ -1,0 +1,7 @@
+# Ignore env files
+.env
+
+# Ignore deployment scripts
+build.sh
+deploy.sh
+
