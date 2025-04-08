@@ -8,10 +8,17 @@ pipeline {
             }
         }
 
+        stage('Print Branch Name') {
+            steps {
+                echo "Branch from env variable: ${env.BRANCH_NAME}"
+                sh 'echo BRANCH_NAME from shell: $BRANCH_NAME'
+            }
+        }
+
         stage('Build Docker Image & Push') {
             steps {
                 sh 'chmod +x build.sh'
-                sh './build.sh'  // ← don't pass any arguments now
+                sh "./build.sh ${env.BRANCH_NAME}"
             }
         }
 
