@@ -1,6 +1,6 @@
 pipeline {
     agent any
-  
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -11,16 +11,14 @@ pipeline {
         stage('Build Docker Image & Push') {
             steps {
                 sh 'chmod +x build.sh'
-                echo "${env.BRANCH_NAME}"
-                sh "./build.sh ${env.BRANCH_NAME}"
-                // sh './build.sh'
+                sh './build.sh'  // ← don't pass any arguments now
             }
         }
 
         stage('Deploy Application') {
             steps {
                 sh 'chmod +x deploy.sh'
-                sh "./deploy.sh ${env.BRANCH_NAME}"
+                sh './deploy.sh'
             }
         }
     }
@@ -29,4 +27,3 @@ pipeline {
         githubPush()
     }
 }
-
