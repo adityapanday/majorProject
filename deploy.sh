@@ -26,7 +26,7 @@ docker pull $REPO:$TAG
 echo " Cleaning up old container..."
 docker rm -f guvi-container || true
 
-echo "running new container on port 80 "
+echo "running new container on port  80 "
 docker run -d --name guvi-container -p 80:3000 $REPO:$TAG
 
 echo " App deployed on http://3.7.241.240:80"
