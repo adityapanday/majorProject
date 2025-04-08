@@ -2,6 +2,6 @@
 .env
 
 # Ignore deployment scripts
-build.sh
-deploy.sh
+#build.sh
+#deploy.sh
 
