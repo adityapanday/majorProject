@@ -3,7 +3,11 @@
 # Load environment variables
 source .env
 
-BRANCH=$1;
+if [ -z "$1" ]; then
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+else
+  BRANCH=$1
+fi
 
 IMAGE_NAME="major"
 # BRANCH=${BRANCH_NAME:-$(git rev-parse --abbrev-ref HEAD)}
