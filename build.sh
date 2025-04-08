@@ -4,7 +4,7 @@
 source .env
 
 IMAGE_NAME="major"
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH=${BRANCH_NAME:-$(git rev-parse --abbrev-ref HEAD)}
 
 if [ "$BRANCH" == "dev" ]; then
   TAG="dev"
