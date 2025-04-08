@@ -3,8 +3,11 @@
 # Load environment variables
 source .env
 
+BRANCH=$1;
+
 IMAGE_NAME="major"
-BRANCH=${BRANCH_NAME:-$(git rev-parse --abbrev-ref HEAD)}
+# BRANCH=${BRANCH_NAME:-$(git rev-parse --abbrev-ref HEAD)}
+
 
 if [ "$BRANCH" == "dev" ]; then
   TAG="dev"

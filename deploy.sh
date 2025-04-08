@@ -1,7 +1,10 @@
 #!/bin/bash
 
 source .env
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+BRANCH=$1;
+
+# BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 if [ "$BRANCH" == "dev" ]; then
   TAG="dev"

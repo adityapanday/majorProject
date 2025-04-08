@@ -11,14 +11,15 @@ pipeline {
         stage('Build Docker Image & Push') {
             steps {
                 sh 'chmod +x build.sh'
-                sh './build.sh'
+                sh "./build.sh ${env.BRANCH_NAME}"
+                // sh './build.sh'
             }
         }
 
         stage('Deploy Application') {
             steps {
                 sh 'chmod +x deploy.sh'
-                sh './deploy.sh'
+                sh "./deploy.sh ${env.BRANCH_NAME}"
             }
         }
     }
