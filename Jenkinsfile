@@ -11,6 +11,7 @@ pipeline {
         stage('Build Docker Image & Push') {
             steps {
                 sh 'chmod +x build.sh'
+                echo "${env.BRANCH_NAME}"
                 sh "./build.sh ${env.BRANCH_NAME}"
                 // sh './build.sh'
             }
