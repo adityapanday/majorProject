@@ -20,7 +20,7 @@ elif [ "$BRANCH" == "master" ]; then
   TAG="prod"
   REPO="$DOCKER_USERNAME/majorprod"
 else
-  echo " Unknown branch: $BRANCH" 
+  echo " Unknown branch: $BRANCH"
   exit 1
 fi
 
