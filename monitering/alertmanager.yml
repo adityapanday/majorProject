@@ -4,9 +4,9 @@ route:
 receivers:
 - name: email-notifications
   email_configs:
-  - to: your-email@gmail.com
-    from: your-email@gmail.com
+  - to: aditya.panday.at@gmail.com
+    from: aditya.panday.at@gmail.com
     smarthost: smtp.gmail.com:587
-    auth_username: "your-email@gmail.com"
-    auth_password: "your-app-password"
+    auth_username: "aditya.panday.at@gmail.com"
+    auth_password: "ovua uloz ccia lzen"
     require_tls: true
